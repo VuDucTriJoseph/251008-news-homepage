@@ -4,7 +4,7 @@ export async function fetchData(url = BASIC_URL) {
   try {
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (err) {
     console.error(err);

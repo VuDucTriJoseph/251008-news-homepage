@@ -8,26 +8,26 @@ import Articals from "../components/articals";
 import Loading from "../components/loading";
 
 // import funtions
-// import { fetchData } from "./fetchData";
+import { fetchData } from "./fetchData";
 
 function App() {
-  console.log("App loaded!");
-  const [data, setData] = useState({});
+  // console.log("App loaded!");
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    console.log("check useEffect work");
+    // console.log("check useEffect work");
     const loadData = async () => {
-      // const result = await fetchData("/public/data.json");
-      // setData(result);
+      const result = await fetchData();
+      setData(result);
 
-      try {
-        const res = await fetch("/data.json");
-        const data = await res.json();
-        console.log(data);
-        setData(data);
-      } catch (err) {
-        console.error(err);
-      }
+      // try {
+      //   const res = await fetch("/data.json");
+      //   const data = await res.json();
+      //   console.log(data);
+      //   setData(data);
+      // } catch (err) {
+      //   console.error(err);
+      // }
     };
     loadData();
   }, []);
@@ -36,14 +36,15 @@ function App() {
     <main className="app">
       <NavBar />
       {data ? (
-        <Loading />
-      ) : (
         <section>
           {/* {console.log("section render")} */}
           <FirstNew firstNewInfo={data.firstNew} />
           <News newsInfo={data.news} />
           <Articals articalsInfo={data.articals} />
         </section>
+      ) : (
+        <Loading />
+        // <h1>data fetch</h1>
       )}
     </main>
   );

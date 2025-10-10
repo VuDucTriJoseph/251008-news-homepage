@@ -1,11 +1,11 @@
 function New({ newInfo }) {
   return (
-    <div>
+    <td>
       <h3>
         <a href="#">{newInfo.title}</a>
       </h3>
       <p>{newInfo.interpret}</p>
-    </div>
+    </td>
   );
 }
 export default New;
