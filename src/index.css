@@ -4,14 +4,18 @@
 }
 body {
   min-width: 100vh;
-}
-.app {
-  /* position: relative; */
-  width: 325px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.app {
+  /* position: relative; */
+  width: 325px;
+  display: grid;
+  /* flex-direction: column;
+  align-items: center;
+  justify-content: center; */
   gap: 2rem;
   padding: 1rem;
 }
@@ -21,7 +25,13 @@ p {
 }
 a {
   text-decoration: none;
+  cursor: pointer;
+  color: hsl(240, 100%, 5%);
 }
+a:hover {
+  color: hsl(5, 85%, 63%);
+}
+
 .menu-bar {
   position: relative;
   z-index: 4;
@@ -76,7 +86,7 @@ a {
 section {
   width: 100%;
   display: grid;
-  gap: 1rem;
+  gap: 4rem;
   /* position: relative; */
 }
 
@@ -141,10 +151,91 @@ tbody td:first-child {
 tbody td:last-child {
   border-right: none;
 }
+tbody td h3 a {
+  color: hsl(36, 100%, 99%);
+}
+tbody td h3 a:hover {
+  color: hsl(35, 77%, 62%);
+}
+
+.articals {
+  display: grid;
+  gap: 2rem;
+}
+article {
+  display: grid;
+  grid-template-areas:
+    "image order"
+    "image titile"
+    "image interpret";
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+article img {
+  grid-area: image;
+  width: 100%;
+}
+article h2 {
+  grid-area: order;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(5, 85%, 63%);
+}
+article h3 {
+  grid-area: titile;
+  margin: 0;
+}
+article p {
+  grid-area: interpret;
+  margin: 0;
+}
 
 .show {
   background-color: hsl(36, 100%, 99%);
 }
 .open {
   display: none;
+}
+
+@media (min-width: 1200px) {
+  .app {
+    width: 1100px;
+  }
+  .overlay {
+    display: none;
+    z-index: -1;
+  }
+  section {
+    grid-template-areas:
+      "fistNew news"
+      "artical artical";
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+  .first-new {
+    display: grid;
+    grid-template-areas:
+      "pic pic"
+      "tile des"
+      "tile but";
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .first-new picture {
+    grid-area: pic;
+  }
+  .first-new h1 {
+    grid-area: tile;
+  }
+  .first-new p {
+    grid-area: des;
+  }
+  .first-new button {
+    grid-area: but;
+  }
+  .articals {
+    grid-area: artical;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
