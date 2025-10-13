@@ -6,25 +6,144 @@ body {
   min-width: 100vh;
 }
 .app {
-  position: relative;
-  width: 375px;
+  /* position: relative; */
+  width: 325px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  padding: 1rem;
+}
+p {
+  color: hsl(236, 13%, 42%);
+  line-height: 1.7;
+}
+a {
+  text-decoration: none;
 }
 .menu-bar {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+  position: relative;
+  z-index: 4;
+  display: grid;
+  /* width: 100%; */
+  grid-template-columns: 1.5fr 8.5fr;
 }
-.nav-links {
+.topup {
   position: absolute;
-  top: 2rem;
+  top: 0;
   right: 0;
   z-index: 10;
-  background-color: white;
+  /* background-color: white; */
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 3rem;
+  width: 75%;
+  height: 100vh;
+}
+.nav-links {
+  font-size: 1.3rem;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  /* padding: 1rem; */
+}
+.nav-links li {
+  padding-left: 1rem;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 8;
+}
+.logo {
+  scale: 70%;
+  /* padding: 1rem; */
+}
+.btn-topup-mobile {
+  background-color: hsl(36, 100%, 99%);
+  border: none;
+  cursor: pointer;
+}
+
+section {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  /* position: relative; */
+}
+
+.img {
+  width: 100%;
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+.btn-sec {
+  background-color: hsl(5, 85%, 63%);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+}
+.btn-sec:hover {
+  background-color: hsl(240, 100%, 5%);
+  color: hsl(36, 100%, 99%);
+}
+.news {
+  padding: 1rem;
+  background-color: hsl(240, 100%, 5%);
+  /* padding: 1rem; */
+}
+table {
+  /* border-collapse: collapse; */
+  /* width: 100%; */
+
+  border-collapse: collapse;
+  /* border-color: hsl(36, 100%, 99%); */
+}
+thead {
+  text-align: left;
+  color: hsl(35, 77%, 62%);
+  font-size: 2rem;
+}
+thead th {
+  border: none;
+  /* color: hsl(36, 100%, 99%); */
+}
+tbody {
+  border-collapse: collapse;
+}
+tbody td {
+  border: solid 0.5px hsl(236, 13%, 42%);
+  padding: 0.5rem;
+}
+tbody tr:first-child td {
+  border-top: none;
+}
+tbody tr:last-child td {
+  border-bottom: none;
+}
+tbody td:first-child {
+  border-left: none;
+}
+tbody td:last-child {
+  border-right: none;
+}
+
+.show {
+  background-color: hsl(36, 100%, 99%);
 }
 .open {
   display: none;
