@@ -3,7 +3,7 @@
   font-size: 15px;
 }
 body {
-  min-width: 100vh;
+  /* min-width: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
