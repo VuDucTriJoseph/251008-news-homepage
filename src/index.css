@@ -8,6 +8,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
 }
 .app {
   /* position: relative; */
@@ -38,6 +39,7 @@ a:hover {
   display: grid;
   /* width: 100%; */
   grid-template-columns: 1.5fr 8.5fr;
+  align-items: center;
 }
 .topup {
   position: absolute;
@@ -50,8 +52,9 @@ a:hover {
   align-items: end;
   gap: 3rem;
   width: 75%;
-  height: 100vh;
+  height: fit-content;
 }
+
 .nav-links {
   font-size: 1.3rem;
   list-style: none;
@@ -69,7 +72,7 @@ a:hover {
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
   opacity: 1;
-  pointer-events: none;
+  /* pointer-events: none; */
   transition: opacity 0.3s ease;
   z-index: 8;
 }
@@ -111,8 +114,12 @@ h1 {
   background-color: hsl(240, 100%, 5%);
   color: hsl(36, 100%, 99%);
 }
+
 .news {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: hsl(240, 100%, 5%);
   /* padding: 1rem; */
 }
@@ -193,8 +200,11 @@ article p {
 
 .show {
   background-color: hsl(36, 100%, 99%);
+  height: 100vh;
 }
-.open {
+.open,
+.sr-only,
+.openover {
   display: none;
 }
 
@@ -237,5 +247,29 @@ article p {
   .articals {
     grid-area: artical;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /* width: 100%; */
+
+  .topup {
+    height: fit-content;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+  }
+  .nav-links {
+    flex-direction: row;
+    align-items: end;
+    justify-content: end;
+  }
+  .logo {
+    scale: 100%;
+  }
+  .open {
+    display: flex;
+  }
+  .btn-topup-mobile {
+    display: none;
   }
 }

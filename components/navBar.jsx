@@ -56,7 +56,10 @@ function NavBar() {
           </li>
         </ul>
       </div>
-      <div className={`overlay ${isOpened ? "open" : ""}`}></div>
+      <div
+        className={`overlay ${isOpened ? "openover" : ""}`}
+        onClick={() => setIsOpened(true)}
+      ></div>
     </nav>
   );
 }

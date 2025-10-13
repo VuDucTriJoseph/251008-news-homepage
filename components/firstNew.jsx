@@ -3,16 +3,23 @@ function FirstNew({ firstNewInfo }) {
   return (
     <div className="first-new">
       <picture>
-        <source media="(min-width:600px)" srcSet={firstNewInfo.imgLink} />
+        <source media="(min-width:1199px)" srcSet={firstNewInfo.imgLink} />
         <img
           className="img"
           src={firstNewInfo.imgLinkMobile}
-          alt="image first new"
+          alt={`Image for article: ${firstNewInfo.title}`}
+          loading="lazy"
         />
       </picture>
       <h1>{firstNewInfo.title}</h1>
       <p>{firstNewInfo.interpret}</p>
-      <button className="btn-sec">Read more</button>
+      <button
+        className="btn-sec"
+        aria-label={`Read more about ${firstNewInfo.title}`}
+        type="button"
+      >
+        Read more
+      </button>
     </div>
   );
 }
